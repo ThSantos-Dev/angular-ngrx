@@ -5,8 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { IPost } from '@interfaces/post.interface';
 import { PostService } from '@services/post.service';
 import { Store } from '@ngrx/store';
-import { postActions } from '@actions/post.actions';
-import { postSelector } from '@selectors/post.selectors';
+import { postActions, postSelector } from '@states/post';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,19 +16,12 @@ import { Observable } from 'rxjs';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class HomePage implements OnInit{
-
-  // posts: IPost[] = [];
+  store       = inject(Store);
   postService = inject(PostService);
-  store = inject(Store);
 
-  // posts$ = this.postService.getPostsApi();
   posts$: Observable<IPost[]> = this.store.select(postSelector.allPosts);
-  loadingPosts$ = this.store.select(postSelector.loadingPosts);
+  loadingPosts$: Observable<boolean> = this.store.select(postSelector.loadingPosts);
   errorPost$ = this.store.select(postSelector.errorGetPosts);
-
-  // ngOnInit() {
-  //   this.posts = this.postService.getPosts();
-  // }
 
   ngOnInit(): void {
     this.store.dispatch(postActions.loadingPosts());

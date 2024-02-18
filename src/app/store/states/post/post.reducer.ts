@@ -1,7 +1,7 @@
-import { postActions } from "@actions/post.actions";
-import { IPost } from "@interfaces/post.interface";
-import { POSTS_MOCK } from "@mocks/posts.mock";
 import { createReducer, on } from "@ngrx/store";
+
+import { IPost } from "@interfaces/post.interface";
+import { postActions } from "./post.actions";
 
 export enum EPostStatus {
     pending = 'pending',
