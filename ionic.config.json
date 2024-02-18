@@ -1,0 +1,7 @@
+{
+  "name": "angular-ngrx",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

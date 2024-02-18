@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listagem de posts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if (errorPost$ | async) {
+    <p>{{ errorPost$ | async }}</p>
+  } @else {
+    @if (loadingPosts$ | async) {
+      <p>Carregando...</p>
+    } @else {
+      @for (post of posts$ | async; track post.id) {
+        <div class="post">
+          <h2>{{ post.title }}</h2>
+          <p> {{ post.body }}</p>
+        </div>
+      } @empty { <p>Não há nenhum post :(</p> }
+    }
+  }
+</ion-content>
