@@ -11,10 +11,8 @@ import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { appReducers } from './app/state/app.reducres';
-import { appEffects } from './app/state/app.effects';
 
-
+import { appReducers, appEffects } from '@store/index';
 
 if (environment.production) {
   enableProdMode();
@@ -26,6 +24,6 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes),
     provideStore(appReducers),
-    provideEffects(...appEffects),
+    provideEffects(appEffects),
   ],
 });

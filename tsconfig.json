@@ -26,10 +26,8 @@
       "@interfaces/*": ["src/app/interfaces/*"],
       "@mocks/*": ["src/app/mocks/*"],
       "@services/*": ["src/app/services/*"],
-      "@reducers/*": ["src/app/reducers/*"],
-      "@effects/*": ["src/app/effects/*"],
-      "@actions/*": ["src/app/actions/*"],
-      "@selectors/*": ["src/app/selectors/*"],
+      "@store/*": ["src/app/store/*"],
+      "@states/*": ["src/app/store/states/*"],
     }
   },
   "angularCompilerOptions": {
