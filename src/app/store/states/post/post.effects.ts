@@ -20,3 +20,18 @@ export const getPostEffect = createEffect(
     ),
   { functional: true }
 );
+
+export const postPostEffect = createEffect(
+  (actions$ = inject(Actions), postService = inject(PostService)) => 
+    actions$.pipe(
+      ofType(postActions.createPost),
+      switchMap((post) => 
+        postService.createPost(post)
+       .pipe(
+            map((post) => postActions.successCreatePost(post)),
+            catchError((error) => of(postActions.errorCreatePost({ error })))
+          )
+      )
+    ),
+    { functional: true }
+)

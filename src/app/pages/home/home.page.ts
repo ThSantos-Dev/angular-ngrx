@@ -8,12 +8,14 @@ import { Store } from '@ngrx/store';
 import { postActions, postSelector } from '@states/post';
 import { Observable } from 'rxjs';
 
+import * as LayoutComponents from '@components/layout';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule, LayoutComponents.HeaderComponent]
 })
 export class HomePage implements OnInit{
   store       = inject(Store);

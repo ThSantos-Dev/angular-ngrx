@@ -16,4 +16,10 @@ export class PostService {
       delay(1000)
     );
   }
+
+  createPost(post: IPost): Observable<IPost> {
+    return of(post).pipe(
+      delay(1000)
+    );
+  }
 }

@@ -12,8 +12,26 @@ const errorGetPosts = createAction(
     props<{ error: string }>()
 );
 
+const createPost = createAction(
+  '[Post] Create Post',
+  props<IPost>()
+);
+
+const successCreatePost = createAction(
+  '[Post] Success Create Post',
+  props<IPost>()
+);
+
+const errorCreatePost = createAction(
+  '[Post] Error Create Post',
+  props<{ error: string }>()
+);
+
 export const postActions = {
   loadingPosts,
   successGetPosts,
   errorGetPosts,
+  createPost,
+  successCreatePost,
+  errorCreatePost,
 };

@@ -5,12 +5,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <app-header></app-header>
+
   <div class="title">
     <h1>Compartilhe suas ideias!</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis error quo voluptas vitae quidem labore iure repudiandae possimus laudantium, nemo quia dolor similique! Dolore nam recusandae repellendus esse numquam odit!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis error quo voluptas vitae quidem labore iure
+      repudiandae possimus laudantium, nemo quia dolor similique! Dolore nam recusandae repellendus esse numquam odit!
+    </p>
   </div>
 
-  <form class="form"></form>
+  <button (click)="createPost()">Criar novo post</button>
 
 
 </ion-content>
