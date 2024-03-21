@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form action="" class="register">
+    <input type="email" id="email">
+    <input type="password" id="password">
+
+    <button class="btn" (click)="onSubmit()">
+      @if (loading$ | async) {
+        <p>Carregando...</p>
+      } @else {
+        <p>Cadastrar</p>
+      }
+    </button>
+  </form>
+  
+  <p>Já possui uma conta? <a routerLink="/login">Login</a></p>
+  <div class="user">
+    <p>Usuário: {{ (user$ | async)?.email }}</p>
+
+  </div>
+
+</ion-content>

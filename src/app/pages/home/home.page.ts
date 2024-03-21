@@ -19,7 +19,7 @@ import * as LayoutComponents from '@components/layout';
 })
 export class HomePage implements OnInit{
   store       = inject(Store);
-  postService = inject(PostService);
+  // postService = inject(PostService);
 
   posts$: Observable<IPost[]> = this.store.select(postSelector.allPosts);
   loadingPosts$: Observable<boolean> = this.store.select(postSelector.loadingPosts);

@@ -1,0 +1,33 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding-top: 20vh;
+
+    .btn {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid var(--ion-color-step-100);
+        color: white;
+        background-color: var(--ion-color-step-150);
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            background-color: var(--ion-color-step-200);
+        }
+        &:active {
+            background-color: var(--ion-color-step-300);
+        }
+        &:disabled {
+            background-color: var(--ion-color-step-100);
+            color: var(--ion-color-step-100);
+            cursor: not-allowed;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}

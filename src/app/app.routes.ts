@@ -30,8 +30,17 @@ export const routes: Routes = [
     path: 'edit/:id',
     loadComponent: () => import('./pages/edit/edit.page').then( m => m.EditPage)
   },
+    {
+    path: 'register',
+    loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
+  },
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+  },
   {
     path: '**',
     loadChildren: () => import('@pages/not-found/not-found.page').then((m) => m.NotFoundPage),
   }
+
 ];
