@@ -21,7 +21,7 @@ export const getPostEffect = createEffect(
   { functional: true }
 );
 
-export const postPostEffect = createEffect(
+export const createPostEffect = createEffect(
   (actions$ = inject(Actions), postService = inject(PostService)) => 
     actions$.pipe(
       ofType(postActions.createPost),

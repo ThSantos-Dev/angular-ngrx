@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Inject, Injectable } from '@angular/core';
 import { IUser, IUserRegister } from '@interfaces/user.interface';
 import { Observable, delay, of } from 'rxjs';
 

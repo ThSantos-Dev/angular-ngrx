@@ -1,6 +1,6 @@
 export interface IPost {
-    id: number,
+    id?: number | string,
     title: string,
     body: string,
-    userId: number
+    userId?: number
 }

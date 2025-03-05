@@ -18,7 +18,13 @@ export class PostService {
   }
 
   createPost(post: IPost): Observable<IPost> {
-    return of(post).pipe(
+    const newPost = {
+      ...post,
+      id: Math.floor(Math.random() * 10) + 1,
+      userId: 1
+    }
+
+    return of(newPost).pipe(
       delay(1000)
     );
   }

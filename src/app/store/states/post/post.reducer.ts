@@ -39,13 +39,48 @@ export const postReducer = createReducer(
     status: EPostStatus.error,
   })),
   on(postActions.createPost, (state, post) => {
+    console.log('Antes da disparada a inserção no objeto de estado');
     console.log(state);
+
+    const newState = {
+      ...state,
+      // posts: [post, ...state.posts],
+      status: EPostStatus.loading,
+    };
+
+    console.log('Disparando o loading');
+    console.log(newState);
+
+    return newState;
+  }),
+  on(postActions.successCreatePost, (state, post) => {
+    console.log('Antes da inserção no objeto de estado');
+    console.log(state);
+
     const newState = {
       ...state,
       posts: [post, ...state.posts],
+      status: EPostStatus.success,
     };
 
+    console.log('Disparando o success');
     console.log(newState);
+
+    return newState;
+  }),
+  on(postActions.errorCreatePost, (state, error) => {
+    console.log('Antes do erro');
+    console.log(state);
+
+    const newState = {
+      ...state,
+      error: error.error,
+      status: EPostStatus.error,
+    };
+
+    console.log('Disparando o erro');
+    console.log(newState);
+
     return newState;
   })
 );
